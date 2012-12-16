@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.mybatis.tarea.persistence.UsuariosMapper">
+
+    <cache />
+
+    <select id="getUsuariosByRut" parameterType="int" resultType="Usuarios">
+        SELECT 
+        rut, 
+        password 
+        FROM usuarios 
+        WHERE rut = #{rut}
+        ;
+    </select>
+    
+    <insert id="insertUsuarios" parameterType="Usuarios">
+        INSERT INTO usuarios
+        (rut, password)
+        VALUES               
+        (#{rut}, #{password})
+        ;
+    </insert>
+    
+    <update id="updateUsuarios" parameterType="Usuarios">
+        UPDATE usuarios
+        SET password = #{password}
+        WHERE rut = #{rut}
+        ;
+    </update>
+    
+    <delete id="deleteUsuarios" parameterType="Usuarios">
+        DELETE FROM usuarios
+        WHERE rut = #{rut}
+        ;
+    </delete>
+  
+    <select id="getAllUsuarios" resultType="Usuarios">
+        SELECT 
+        rut, 
+        password 
+        FROM usuarios
+        ;
+    </select>
+
+</mapper>
