@@ -19,3 +19,5 @@ CREATE TABLE usuarios (
     rut             int        primary key,
     password        varchar
 );
+
+- La aplicación corre con el comando mvn tomcat:deploy sobre tomcat6.
