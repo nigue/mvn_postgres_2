@@ -1,14 +1,14 @@
-package org.mybatis.tarea.service;
+package cl.utem.informatica.alumnos.nigue.servicio;
 
+import cl.utem.informatica.alumnos.nigue.dao.UsuariosMapper;
+import cl.utem.informatica.alumnos.nigue.modelo.Usuario;
 import java.util.List;
 import org.apache.log4j.Logger;
-import org.mybatis.tarea.domain.Usuarios;
-import org.mybatis.tarea.persistence.UsuariosMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-@Service
+@Service("usuariosService")
 public class UsuariosService {
 
     private static final Logger LOGGER = Logger.getLogger(UsuariosService.class);
@@ -16,7 +16,7 @@ public class UsuariosService {
     @Autowired
     private UsuariosMapper usuariosMapper;
 
-    public Usuarios getUsuarios(int rut) {
+    public Usuario getUsuarios(int rut) {
         
         LOGGER.debug("/////////////UsuariosService - rut: " + rut);
         
@@ -24,21 +24,21 @@ public class UsuariosService {
     }
 
     @Transactional
-    public void insertUsuarios(Usuarios usuarios) {
+    public void insertUsuarios(Usuario usuarios) {
         usuariosMapper.insertUsuarios(usuarios);
     }
 
     @Transactional
-    public void updateUsuarios(Usuarios usuarios) {
+    public void updateUsuarios(Usuario usuarios) {
         usuariosMapper.updateUsuarios(usuarios);
     }
 
     @Transactional
-    public void deleteUsuarios(Usuarios usuarios) {
+    public void deleteUsuarios(Usuario usuarios) {
         usuariosMapper.deleteUsuarios(usuarios);
     }
 
-    public List<Usuarios> getAllUsuarios() {
+    public List<Usuario> getAllUsuarios() {
         return usuariosMapper.getAllUsuarios();
     }
 }

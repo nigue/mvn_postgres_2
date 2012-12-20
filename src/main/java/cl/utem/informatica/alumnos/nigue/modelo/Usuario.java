@@ -1,6 +1,6 @@
-package org.mybatis.tarea.domain;
+package cl.utem.informatica.alumnos.nigue.modelo;
 
-public class Usuarios {
+public class Usuario {
     
     private int rut;
     private String password;

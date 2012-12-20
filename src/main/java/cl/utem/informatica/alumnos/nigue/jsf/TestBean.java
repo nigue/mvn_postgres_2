@@ -1,16 +1,16 @@
-package cl.anibal.mig.test;
+package cl.utem.informatica.alumnos.nigue.jsf;
 
 public class TestBean {
     
-    private int edad;
-    private String nombre;
-    private boolean cuenta;
+    private Integer edad = null;
+    private String nombre = null;
+    private Boolean cuenta = false;
 
-    public int getEdad() {
+    public Integer getEdad() {
         return edad;
     }
 
-    public void setEdad(int edad) {
+    public void setEdad(Integer edad) {
         this.edad = edad;
     }
 
@@ -22,12 +22,11 @@ public class TestBean {
         this.nombre = nombre;
     }
 
-    public boolean isCuenta() {
+    public Boolean getCuenta() {
         return cuenta;
     }
 
-    public void setCuenta(boolean cuenta) {
+    public void setCuenta(Boolean cuenta) {
         this.cuenta = cuenta;
     }
-    
 }

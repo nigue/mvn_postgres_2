@@ -1,12 +1,12 @@
-package com.mybatis.test;
+package cl.utem.informatica.alumnos.nigue.test;
 
-import net.sourceforge.stripes.integration.spring.SpringBean;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mybatis.tarea.domain.Usuarios;
-import org.mybatis.tarea.service.UsuariosService;
+import cl.utem.informatica.alumnos.nigue.modelo.Usuario;
+import cl.utem.informatica.alumnos.nigue.servicio.UsuariosService;
+import javax.annotation.Resource;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -15,7 +15,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 public class TestMybatis {
 
     private static final Logger LOGGER = Logger.getLogger(TestMybatis.class);
-    @SpringBean
+    @Resource(name="usuariosService")
     private transient UsuariosService usuariosService;
 
     @Test
@@ -23,7 +23,7 @@ public class TestMybatis {
 
         LOGGER.debug("/////////////Inicio de TEST: TestMybatis");
 
-        Usuarios usuarios;
+        Usuario usuarios;
         
 //        LOGGER.debug("dataSource: " + usuariosService.toString());
         try {

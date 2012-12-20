@@ -19,7 +19,7 @@
     </bean>
 
     <!-- enable component scanning (beware that this does not enable mapper scanning!) -->    
-    <context:component-scan base-package="org.mybatis.tarea.service" />
+    <context:component-scan base-package="cl.utem.informatica.alumnos.nigue" />
 
     <!-- enable autowire -->
     <context:annotation-config />
@@ -35,6 +35,6 @@
 
     <!-- scan for mappers and let them be autowired -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="org.mybatis.tarea.persistence" />
+        <property name="basePackage" value="cl.utem.informatica.alumnos.nigue.dao" />
     </bean>
 </beans>

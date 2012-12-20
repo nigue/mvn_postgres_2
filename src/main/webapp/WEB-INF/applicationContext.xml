@@ -5,7 +5,7 @@
 http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
     <bean id="testBean"
-          class="cl.anibal.mig.test.TestBean">
+          class="cl.utem.informatica.alumnos.nigue.jsf.TestBean">
         <property name="edad" value="23"/>
         <property name="nombre" value="miguel"/>
         <property name="cuenta" value="true"/>
