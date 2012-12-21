@@ -120,7 +120,7 @@ http://maven.apache.org/maven-v4_0_0.xsd">
             <groupId>org.springframework</groupId>
             <artifactId>spring-tx</artifactId>
             <version>${spring.framework.version}</version>
-            <scope>compile</scope>
+            <type>jar</type>
         </dependency>
         
         <dependency>
