@@ -1,12 +1,12 @@
 package cl.utem.informatica.alumnos.nigue.test;
 
+import cl.utem.informatica.alumnos.nigue.modelo.Usuario;
+import cl.utem.informatica.alumnos.nigue.servicio.UsuariosService;
+import javax.annotation.Resource;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import cl.utem.informatica.alumnos.nigue.modelo.Usuario;
-import cl.utem.informatica.alumnos.nigue.servicio.UsuariosService;
-import javax.annotation.Resource;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -25,7 +25,7 @@ public class TestMybatis {
 
         Usuario usuarios;
         
-//        LOGGER.debug("dataSource: " + usuariosService.toString());
+        LOGGER.debug("dataSource: " + usuariosService.toString());
         try {
             usuarios = usuariosService.getUsuarios(22222222);
 //            LOGGER.debug("user 1:" + usuarios.getPassword());
