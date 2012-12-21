@@ -28,7 +28,7 @@ public class TestMybatis {
         LOGGER.debug("dataSource: " + usuariosService.toString());
         try {
             usuarios = usuariosService.getUsuarios(22222222);
-//            LOGGER.debug("user 1:" + usuarios.getPassword());
+            LOGGER.debug("user 1:" + usuarios.getPassword());
         } catch (Exception e) {
             LOGGER.debug("ERROR: " + e.getMessage());
         }

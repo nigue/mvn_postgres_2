@@ -5,11 +5,17 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans 
 http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
-    <bean id="dataSource"
+<!--    <bean id="dataSource"
           class="org.springframework.jdbc.datasource.DriverManagerDataSource"
           p:driverClassName="org.postgresql.Driver" 
           p:url="jdbc:postgresql://192.168.3.5:5432/anibaldb"
           p:username="anibal" 
-          p:password="anibal" />
+          p:password="anibal" />-->
     
+    <bean id="dataSource"
+          class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+          p:driverClassName="org.postgresql.Driver" 
+          p:url="jdbc:postgresql://127.0.0.1:5432/testMaven"
+          p:username="anibal" 
+          p:password="anibal" />
 </beans>
