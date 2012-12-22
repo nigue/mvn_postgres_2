@@ -1,7 +1,7 @@
 package cl.utem.informatica.alumnos.nigue.test;
 
 import cl.utem.informatica.alumnos.nigue.modelo.Usuario;
-import cl.utem.informatica.alumnos.nigue.servicio.UsuariosService;
+import cl.utem.informatica.alumnos.nigue.servicio.UsuarioService;
 import javax.annotation.Resource;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
@@ -17,20 +17,20 @@ import org.springframework.transaction.annotation.Transactional;
 public class TestMybatis {
 
     private static final Logger LOGGER = Logger.getLogger(TestMybatis.class);
-    @Resource(name="usuariosService")
-    private transient UsuariosService usuariosService;
+    @Resource(name="usuarioService")
+    private transient UsuarioService usuarioService;
 
     @Test
-    public void getUsuariosByRutTest() {
+    public void getUsuarioByRutTest() {
 
-        LOGGER.debug("/////////////Inicio de TEST: getUsuariosByRutTest");
+        LOGGER.debug("/////////////Inicio de TEST: getUsuarioByRutTest");
 
-        Usuario usuarios;
+        Usuario usuario;
         
-        LOGGER.debug("dataSource: " + usuariosService.toString());
+        LOGGER.debug("dataSource: " + usuarioService.toString());
         try {
-            usuarios = usuariosService.getUsuarios(22222222);
-            LOGGER.debug("user 2: " + usuarios.getPassword());
+            usuario = usuarioService.getUsuario(22222222);
+            LOGGER.debug("user 2: " + usuario.getPassword());
         } catch (Exception e) {
             LOGGER.debug("ERROR: " + e.getMessage());
         }
@@ -40,55 +40,55 @@ public class TestMybatis {
     }
     
     @Test
-    public void insertUsuariosTest() {
+    public void insertUsuarioTest() {
     
-        LOGGER.debug("/////////////Inicio de TEST: insertUsuariosTest");
+        LOGGER.debug("/////////////Inicio de TEST: insertUsuarioTest");
         
-        Usuario usuarios = new Usuario();
+        Usuario usuario = new Usuario();
         
-        usuarios.setRut(55555555);
-        usuarios.setPassword("user_5");
+        usuario.setRut(55555555);
+        usuario.setPassword("user_5");
         
-        usuariosService.insertUsuarios(usuarios);
+        usuarioService.insertUsuario(usuario);
         
-        Usuario usuariosDelta = new Usuario();
+        Usuario usuarioDelta = new Usuario();
         
-        usuariosDelta = usuariosService.getUsuarios(55555555);
+        usuarioDelta = usuarioService.getUsuario(55555555);
         
-        Assert.assertEquals(usuariosDelta.getPassword(), usuarios.getPassword());
-        Assert.assertEquals(usuariosDelta.getRut(), usuarios.getRut());
+        Assert.assertEquals(usuarioDelta.getPassword(), usuario.getPassword());
+        Assert.assertEquals(usuarioDelta.getRut(), usuario.getRut());
     }
     
     @Test
-    public void updateUsuariosTest() {
+    public void updateUsuarioTest() {
     
-        LOGGER.debug("/////////////Inicio de TEST: updateUsuariosTest");
+        LOGGER.debug("/////////////Inicio de TEST: updateUsuarioTest");
         
-        Usuario usuarios = new Usuario();
-        usuarios = usuariosService.getUsuarios(44444444);
+        Usuario usuario = new Usuario();
+        usuario = usuarioService.getUsuario(44444444);
         
-        usuarios.setPassword("nuevoPassword");
+        usuario.setPassword("nuevoPassword");
         
-        usuariosService.updateUsuarios(usuarios);
+        usuarioService.updateUsuario(usuario);
         
-        Usuario usuariosDelta = new Usuario();
-        usuariosDelta = usuariosService.getUsuarios(44444444);
+        Usuario usuarioDelta = new Usuario();
+        usuarioDelta = usuarioService.getUsuario(44444444);
         
-        Assert.assertNotEquals(usuariosDelta.getPassword(), "user_4");
+        Assert.assertNotEquals(usuarioDelta.getPassword(), "user_4");
     }
     
     @Test
-    public void deleteUsuariosAndgetAllUsuariosTest() {
+    public void deleteUsuarioAndgetAllUsuarioTest() {
     
-        int before = usuariosService.getAllUsuarios().size();
+        int before = usuarioService.getAllUsuario().size();
         
-        Usuario usuarios = new Usuario();
+        Usuario usuario = new Usuario();
         
-        usuarios = usuariosService.getUsuarios(44444444);
+        usuario = usuarioService.getUsuario(44444444);
         
-        usuariosService.deleteUsuarios(usuarios);
+        usuarioService.deleteUsuario(usuario);
         
-        int after = usuariosService.getAllUsuarios().size();
+        int after = usuarioService.getAllUsuario().size();
         
         Assert.assertEquals(before, after + 1);
     }
