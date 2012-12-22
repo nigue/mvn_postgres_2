@@ -11,4 +11,6 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
         <property name="cuenta" value="true"/>
     </bean>
     
+    <import resource="classpath:dataSourceContext.xml" />
+    <import resource="classpath:mybatisContext.xml" />
 </beans>

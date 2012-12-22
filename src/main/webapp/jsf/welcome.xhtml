@@ -12,12 +12,30 @@
                 Tarea - Trabajo de Título - Miguel Fuenzalida
             </h1>        
         </div>
-        <p:panel header="What do you do?">
-            asdf 2
-            ${testBean.cuenta}
-            ${testBean.edad}
-            ${testBean.nombre}
+        <p:panel header="Elija una opción">
+            <h:form>
+                <h:panelGrid columns="5">
+                    <p:commandButton value="Buscar un Usuario"
+                                     action="search_user"
+                                     ajax="false"/>
 
+                    <p:commandButton value="Agregar un Usuario"
+                                     action="add_user"
+                                     ajax="false"/>
+
+                    <p:commandButton value="Actualizar un Usuario"
+                                     action="update_user"
+                                     ajax="false"/>
+
+                    <p:commandButton value="Borrar un Usuario"
+                                     action="delete_user"
+                                     ajax="false"/>
+
+                    <p:commandButton value="Mirar tabla Usuario"
+                                     action="see_user"
+                                     ajax="false"/>
+                </h:panelGrid>
+            </h:form>
         </p:panel>
     </h:body>
 </html>
