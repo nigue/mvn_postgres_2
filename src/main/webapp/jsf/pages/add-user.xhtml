@@ -1,12 +1,49 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>Facelet Title</title>
     </h:head>
     <h:body>
-        Hello from Facelets
+        <div align="center">
+            <h1 class="title ui-widget-header ui-corner-all">
+                Tarea - Trabajo de Título - Miguel Fuenzalida
+            </h1>        
+        </div>
+        <p:panel header="Formulario para ingresar un Usuario">
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="Rut: * "
+                                   for="rut"/>
+                    <p:inputMask value=""
+                                 mask="99.999.999-*"
+                                 required="true"
+                                 requiredMessage="this input can't be null"
+                                 id="rut"/>
+                    
+                    <h:outputLabel for="pwd1" 
+                                   value="Password: *" />  
+                    <p:password id="pwd1" 
+                                value="" 
+                                match="pwd2" 
+                                label="Password 1" 
+                                required="true"/>  
+
+                    <h:outputLabel for="pwd2" 
+                                   value="Password repeat: *" />  
+                    <p:password id="pwd2" 
+                                value="" 
+                                label="Password 2" 
+                                required="true"/>
+                    
+                    <p:commandButton action="asdf"
+                                     value="Submit"/>
+                    <p:messages showDetail="true"
+                                autoUpdate="true"/>
+                </h:panelGrid>
+            </h:form>
+        </p:panel>
     </h:body>
 </html>
-

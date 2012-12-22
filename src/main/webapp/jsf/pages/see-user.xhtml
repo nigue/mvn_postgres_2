@@ -12,21 +12,17 @@
                 Tarea - Trabajo de Título - Miguel Fuenzalida
             </h1>        
         </div>
-        <p:panel header="Elija una opción">
+        <p:panel header="Datos">
             <h:form>
                 
-<!--                <p:dataTable var="jugador" value="#{calculoBean.jugadores}">
-                    <p:column headerText="Nombre Jugador">
-                        <h:outputText value="#{jugador.nombre}" />
+                <p:dataTable var="usuarios" value="#{seeUserBean.usuarios}">
+                    <p:column headerText="Rut">
+                        <h:outputText value="#{usuarios.rut}" />
                     </p:column>
-                    <p:column headerText="ELO">
-                        <h:outputText value="#{jugador.elo}" />
+                    <p:column headerText="Password">
+                        <h:outputText value="#{usuarios.password}" />
                     </p:column>
-                    <p:column headerText="N. Partidas">
-                        <h:outputText value="#{jugador.numPartidas}" />
-                    </p:column>
-
-                </p:dataTable>-->
+                </p:dataTable>
             </h:form>
         </p:panel>
     </h:body>
