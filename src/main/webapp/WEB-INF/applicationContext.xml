@@ -16,4 +16,6 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
     
     <bean id="seeUserBean"
           class="cl.utem.informatica.alumnos.nigue.jsf.pages.SeeUserBean"/>
+    <bean id="addUserBean"
+          class="cl.utem.informatica.alumnos.nigue.jsf.pages.AddUserBean"/>
 </beans>

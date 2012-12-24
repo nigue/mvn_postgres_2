@@ -17,8 +17,9 @@
                 <h:panelGrid columns="2">
                     <h:outputLabel value="Rut: * "
                                    for="rut"/>
-                    <p:inputMask value=""
-                                 mask="99.999.999-*"
+                    <p:inputText value="${addUserBean.rut}"
+                                 validator="${addUserBean.rutValidator}"
+                                 converter="rut"
                                  required="true"
                                  requiredMessage="this input can't be null"
                                  id="rut"/>
@@ -26,7 +27,7 @@
                     <h:outputLabel for="pwd1" 
                                    value="Password: *" />  
                     <p:password id="pwd1" 
-                                value="" 
+                                value="${addUserBean.password}" 
                                 match="pwd2" 
                                 label="Password 1" 
                                 required="true"/>  
@@ -38,7 +39,7 @@
                                 label="Password 2" 
                                 required="true"/>
                     
-                    <p:commandButton action="asdf"
+                    <p:commandButton action="${addUserBean.doSubmit}"
                                      value="Submit"/>
                     <p:messages showDetail="true"
                                 autoUpdate="true"/>
