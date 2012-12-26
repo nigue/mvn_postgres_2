@@ -4,7 +4,7 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:p="http://primefaces.org/ui">
     <h:head>
-        <title>Facelet Title</title>
+        <title>Tarea TT</title>
     </h:head>
     <h:body>
         <div align="center">
@@ -18,10 +18,9 @@
                     <h:outputLabel value="Rut: * "
                                    for="rut"/>
                     <p:inputText value="${addUserBean.rut}"
-                                 validator="${addUserBean.rutValidator}"
                                  converter="rut"
                                  required="true"
-                                 requiredMessage="this input can't be null"
+                                 requiredMessage="El rut especificado no es correcto"
                                  id="rut"/>
                     
                     <h:outputLabel for="pwd1" 
@@ -39,10 +38,11 @@
                                 label="Password 2" 
                                 required="true"/>
                     
-                    <p:commandButton action="asdf"
+                    <p:commandButton action="${addUserBean.doSubmit}"
                                      value="Submit"/>
-                    <p:messages showDetail="true"
-                                autoUpdate="true"/>
+                    <p:messages showDetail="false"
+                                autoUpdate="true"
+                                closable="true"/>
                 </h:panelGrid>
             </h:form>
         </p:panel>

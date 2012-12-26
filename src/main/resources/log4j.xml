@@ -6,10 +6,10 @@
         <param name="Target" value="System.out"/>
         <param name="Threshold" value="DEBUG"/>
         <layout class="org.apache.log4j.PatternLayout">
-            <param name="ConversionPattern" value="%m%n" />
+            <param name="ConversionPattern" value="%c%x: %m%n" />
         </layout>
     </appender>
-    <category name="cl.anibal.mig">
+    <category name="cl.utem.informatica.alumnos.nigue">
         <priority value="DEBUG"/>
     </category>
     <category name="org.springframework">

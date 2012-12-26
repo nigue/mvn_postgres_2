@@ -15,7 +15,8 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
     <import resource="classpath:mybatisContext.xml" />
     
     <bean id="seeUserBean"
-          class="cl.utem.informatica.alumnos.nigue.jsf.pages.SeeUserBean"/>
+          class="cl.utem.informatica.alumnos.nigue.jsf.pages.SeeUserBean"
+          scope="request"/>
     <bean id="addUserBean"
           class="cl.utem.informatica.alumnos.nigue.jsf.pages.AddUserBean"/>
 </beans>
