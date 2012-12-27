@@ -26,3 +26,4 @@ Tarea: (Próximo Jueves)
 - crear un login sencillo.
 - implementar spring-security para el login.
 - estudiar PLR o R con java.
+- el modelo va a cambiar a plural y debe ajustarse en el código.
