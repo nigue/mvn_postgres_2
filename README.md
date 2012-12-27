@@ -22,5 +22,7 @@ Tarea: (Próximo Jueves)
 - corregir el convertidor de rut (tipo 99.999.999-9).
 - corregir el SHA1.  php -r '$n=sha1("asdf"); echo "\n$n\n";'
 - crear una tabla de accesos.
+- crear estadisticas y graficos de los accesos. (promedio, moda, etc...).
 - crear un login sencillo.
 - implementar spring-security para el login.
+- estudiar PLR o R con java.
