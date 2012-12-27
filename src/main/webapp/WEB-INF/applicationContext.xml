@@ -23,4 +23,6 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
           class="cl.utem.informatica.alumnos.nigue.jsf.pages.SearchUserBean"/>
     <bean id="updateUserBean"
           class="cl.utem.informatica.alumnos.nigue.jsf.pages.UpdateUserBean"/>
+    <bean id="deleteUserBean"
+          class="cl.utem.informatica.alumnos.nigue.jsf.pages.DeleteUserBean"/>
 </beans>

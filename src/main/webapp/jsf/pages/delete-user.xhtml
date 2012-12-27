@@ -1,12 +1,55 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
-        <title>Facelet Title</title>
+        <title>Tarea TT</title>
     </h:head>
     <h:body>
-        Hello from Facelets
+        <div align="center">
+            <h1 class="title ui-widget-header ui-corner-all">
+                Tarea - Trabajo de Título - Miguel Fuenzalida
+            </h1>        
+        </div>
+        <h:form>
+            <p:panel header="Formulario para eliminar un registro (DELETE)">
+
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="Rut: * "
+                                   for="rut"/>
+                    <p:inputText value="${deleteUserBean.rutBusqueda}"
+                                 converter="rut"
+                                 required="true"
+                                 requiredMessage="El rut especificado no es correcto"
+                                 id="rut"/>
+
+                    <p:commandButton actionListener="${deleteUserBean.doSearch}"
+                                     value="Buscar"
+                                     update=":delete"/>
+                    <p:messages showDetail="false"
+                                autoUpdate="true"
+                                closable="true"/>
+                </h:panelGrid>
+            </p:panel>
+        </h:form>
+        <h:panelGroup id="delete">
+            <h:form>
+                <p:panel header="Formulario para borrar"
+                         id ="result">
+                    <h:panelGrid columns="2">
+                        <h:outputLabel value="Rut: "/>
+                        <h:outputLabel value="${deleteUserBean.usuarioToDelete.rut}"/>
+                        
+                        <h:outputLabel value="Password: "/>
+                        <h:outputLabel value="${deleteUserBean.usuarioToDelete.password}"/>
+                        
+                        <p:commandButton action="${deleteUserBean.doDelete}"
+                                         value="Submit"
+                                         disabled="${deleteUserBean.buttonDelete}"/>
+                    </h:panelGrid>
+                </p:panel>
+            </h:form>
+        </h:panelGroup>
     </h:body>
 </html>
-
