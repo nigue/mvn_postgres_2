@@ -16,3 +16,11 @@ OBS:
 - La tabla a utitizar es la que se creo a traves del comando sql que se encuentra en el archivo dentro de SQL.
 - La aplicación corre con el comando mvn tomcat:deploy sobre tomcat6.
 - Se utiliza Mybatis.annotation (anotaciones) para ejecutar las consultas SQL sobre los ...Mapper.java
+
+Tarea: (Próximo Jueves)
+
+- corregir el convertidor de rut (tipo 99.999.999-9).
+- corregir el SHA1.  php -r '$n=sha1("asdf"); echo "\n$n\n";'
+- crear una tabla de accesos.
+- crear un login sencillo.
+- implementar spring-security para el login.
