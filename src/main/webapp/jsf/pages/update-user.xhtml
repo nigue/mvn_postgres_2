@@ -1,12 +1,69 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
-        <title>Facelet Title</title>
+        <title>Tarea TT</title>
     </h:head>
     <h:body>
-        Hello from Facelets
+        <div align="center">
+            <h1 class="title ui-widget-header ui-corner-all">
+                Tarea - Trabajo de Título - Miguel Fuenzalida
+            </h1>        
+        </div>
+        <h:form>
+            <p:panel header="Formulario para cambiar password (UPDATE)">
+
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="Rut: * "
+                                   for="rut"/>
+                    <p:inputText value="${updateUserBean.rutBusqueda}"
+                                 converter="rut"
+                                 required="true"
+                                 requiredMessage="El rut especificado no es correcto"
+                                 id="rut"/>
+
+                    <p:commandButton actionListener="${updateUserBean.doSearch}"
+                                     value="Buscar"
+                                     update=":update"/>
+                    <p:messages showDetail="false"
+                                autoUpdate="true"
+                                closable="true"/>
+                </h:panelGrid>
+            </p:panel>
+        </h:form>
+        <h:panelGroup id="update">
+            <h:form>
+                <p:panel header="Formulario para updatear"
+                         id ="result">
+                    <h:panelGrid columns="2">
+                        <h:outputLabel value="Rut: "/>
+                        <h:outputLabel value="${updateUserBean.usuarioToUpdate.rut}"/>
+
+                        <h:outputLabel for="pwd1" 
+                                       value="Password: *" />  
+                        <p:password id="pwd1" 
+                                    value="${updateUserBean.usuarioToUpdate.password}" 
+                                    match="pwd2" 
+                                    label="Password 1" 
+                                    required="true"/>  
+
+                        <h:outputLabel for="pwd2" 
+                                       value="Password repeat: *" />  
+                        <p:password id="pwd2" 
+                                    value="${updateUserBean.usuarioToUpdate.password}" 
+                                    label="Password 2" 
+                                    required="true"/>
+                        <p:commandButton action="${updateUserBean.doUpdate}"
+                                         value="Submit"
+                                         disabled="${updateUserBean.buttonUpdate}"/>
+                        <p:messages showDetail="false"
+                                    autoUpdate="true"
+                                    closable="true"/>
+                    </h:panelGrid>
+                </p:panel>
+            </h:form>
+        </h:panelGroup>
     </h:body>
 </html>
-
