@@ -19,4 +19,6 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
           scope="request"/>
     <bean id="addUserBean"
           class="cl.utem.informatica.alumnos.nigue.jsf.pages.AddUserBean"/>
+    <bean id="searchUserBean"
+          class="cl.utem.informatica.alumnos.nigue.jsf.pages.SearchUserBean"/>
 </beans>
