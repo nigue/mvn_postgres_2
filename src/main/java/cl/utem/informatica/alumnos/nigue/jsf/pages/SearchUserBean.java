@@ -25,6 +25,13 @@ public class SearchUserBean {
             usuarioSearch = usuarioService.getUsuario(getRut());
             LOGGER.debug(getUsuarioSearch().getRut() + " -> " + getUsuarioSearch().getPassword());
             LOGGER.debug("no catch " + isDialog());
+            FacesContext.getCurrentInstance().addMessage(
+                    null,
+                    new FacesMessage(
+                    FacesMessage.SEVERITY_INFO,
+                    "ususario encontrado",
+                    "INFO"));
+            
             return null;
         } catch (NullPointerException npe) {
             setDialog(false);
