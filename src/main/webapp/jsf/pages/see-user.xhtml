@@ -17,7 +17,8 @@
                 
                 <p:dataTable var="usuarios" value="#{seeUserBean.usuarios}">
                     <p:column headerText="Rut">
-                        <h:outputText value="#{usuarios.rut}" />
+                        <h:outputText value="#{usuarios.rut}" 
+                                      converter="rut"/>
                     </p:column>
                     <p:column headerText="Password">
                         <h:outputText value="#{usuarios.password}" />

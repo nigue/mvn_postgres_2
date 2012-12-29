@@ -18,11 +18,17 @@ public class RutConverter implements Converter {
         LOGGER.debug("########### Entrando a convertidor: rut a int ##########");
         int rut = 0;
         try {
-            rut = new Integer(value.substring(0, value.indexOf("-")));
-            if (!verificarRut(rut, digitoVerificadorRut(rut))) {
+            LOGGER.debug("rut a cortar: " + value);
+            String[] dataRut = value.split("-");
+            String dataNum = dataRut[0];
+            dataNum = dataNum.replaceAll("\\.", "");
+            Integer number = new Integer(dataNum);
+            char dv = dataRut[1].charAt(0);
+            LOGGER.debug("rut completo: " + number + "-" + dv);
+            if (!verificarRut(number, dv)) {
                 return null;
             }
-            return rut;
+            return number;
         } catch (Exception e) {
             LOGGER.debug(e);
             return null;
@@ -31,8 +37,21 @@ public class RutConverter implements Converter {
 
     @Override
     public String getAsString(FacesContext context, UIComponent component, Object value) {
-        int rut = (Integer) value;
-        return rut + "-" + digitoVerificadorRut(rut);
+        Integer rut = (Integer) value;
+        String dataRut = rut.toString();
+        try {
+            String NewDataRut = dataRut.substring(0, dataRut.length() - 6)
+                    + "." + dataRut.substring(dataRut.length() - 6, dataRut.length() - 3)
+                    + "." + dataRut.substring(dataRut.length() - 3, dataRut.length());
+//        LOGGER.debug("rut a cortar: " + rut);
+//        LOGGER.debug("p1: " + dataRut.substring(0, dataRut.length() - 6));
+//        LOGGER.debug("p2: " + dataRut.substring(dataRut.length() - 6, dataRut.length() - 3));
+//        LOGGER.debug("p3: " + dataRut.substring(dataRut.length() - 3, dataRut.length()));
+            return NewDataRut + "-" + digitoVerificadorRut(rut);
+        } catch (Exception e) {
+            LOGGER.debug(e);
+            return rut + "-" + digitoVerificadorRut(rut);
+        }
     }
 
     public char digitoVerificadorRut(int rut) {

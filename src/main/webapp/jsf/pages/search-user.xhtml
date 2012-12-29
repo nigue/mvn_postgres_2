@@ -21,7 +21,7 @@
                     <p:inputText value="${searchUserBean.rut}"
                                  converter="rut"
                                  required="true"
-                                 requiredMessage="El rut especificado no es correcto"
+                                 requiredMessage="El rut especificado no es correcto, debe ser de la forma 99.999.999-k"
                                  id="rut"/>
 
                     <p:commandButton actionListener="${searchUserBean.doSubmit}"
