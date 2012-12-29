@@ -8,6 +8,7 @@ import java.security.NoSuchAlgorithmException;
 import javax.annotation.Resource;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
+import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.log4j.Logger;
 
 public class AddUserBean {
@@ -21,35 +22,12 @@ public class AddUserBean {
     public String doSubmit() {
         LOGGER.debug("######## DO SUBMIT ########");
         LOGGER.debug(getRut() + " and " + getPassword());
-        String hash = new String("");
-        try {
-            MessageDigest md = MessageDigest.getInstance("sha1");
-            byte[] textBytes = getPassword().getBytes("8859_1");
-            for (byte b : md.digest()) {
-                hash += Integer.toHexString(b & 0xff);
-            }
-            LOGGER.debug(hash);
-        } catch (UnsupportedEncodingException ex) {
-            LOGGER.debug(ex);
-            FacesContext.getCurrentInstance().addMessage(
-                    null,
-                    new FacesMessage(
-                    FacesMessage.SEVERITY_ERROR,
-                    "no es posible guardar",
-                    "ERROR"));
-        } catch (NoSuchAlgorithmException nsae) {
-            LOGGER.debug(nsae);
-            FacesContext.getCurrentInstance().addMessage(
-                    null,
-                    new FacesMessage(
-                    FacesMessage.SEVERITY_ERROR,
-                    "no es posible guardar",
-                    "ERROR"));
-        }
+//        String passSha1 = DigestUtils.sha1(getPassword()).toString();
+        String passSha1 = DigestUtils.sha1Hex(getPassword());
         Usuario usuario = new Usuario();
 
         usuario.setRut(getRut());
-        usuario.setPassword(hash);
+        usuario.setPassword(passSha1);
 
         try {
             usuarioService.insertUsuario(usuario);

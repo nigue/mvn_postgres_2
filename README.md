@@ -20,7 +20,7 @@ OBS:
 Tarea: (Próximo Jueves)
 
 - [COMPLETO] corregir el convertidor de rut (tipo 99.999.999-9).
-- corregir el SHA1.  php -r '$n=sha1("asdf"); echo "\n$n\n";'
+- [COMPLETO] corregir el SHA1.  php -r '$n=sha1("asdf"); echo "\n$n\n";'
 - crear una tabla de accesos. (usuario, ip, hora)
 - crear estadisticas y graficos de los accesos. (promedio, moda, etc...).
 - crear un login sencillo.
