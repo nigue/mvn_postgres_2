@@ -10,19 +10,19 @@ import org.apache.ibatis.annotations.Update;
 
 public interface UsuarioMapper {
     
-    @Select("SELECT rut, password FROM usuario WHERE rut = #{rut};")
+    @Select("SELECT rut, password FROM usuarios WHERE rut = #{rut};")
     Usuario getUsuarioByRut(@Param("rut") int rut);
     
-    @Insert("INSERT INTO usuario (rut, password) VALUES (#{usuario.rut}, #{usuario.password});")
+    @Insert("INSERT INTO usuarios (rut, password) VALUES (#{usuario.rut}, #{usuario.password});")
     void insertUsuario(@Param("usuario") Usuario usuario);
     
-    @Update("UPDATE usuario SET password = #{usuario.password} WHERE rut = #{usuario.rut};")
+    @Update("UPDATE usuarios SET password = #{usuario.password} WHERE rut = #{usuario.rut};")
     void updateUsuario(@Param("usuario") Usuario usuario);
     
-    @Delete("DELETE FROM usuario WHERE rut = #{usuario.rut};")
+    @Delete("DELETE FROM usuarios WHERE rut = #{usuario.rut};")
     void deleteUsuario(@Param("usuario") Usuario usuario);
     
-    @Select("SELECT rut, password FROM usuario;")
+    @Select("SELECT rut, password FROM usuarios;")
     List<Usuario> getAllUsuario();
     
 }
