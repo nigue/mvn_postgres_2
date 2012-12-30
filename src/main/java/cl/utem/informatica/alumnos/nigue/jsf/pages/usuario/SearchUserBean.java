@@ -1,4 +1,4 @@
-package cl.utem.informatica.alumnos.nigue.jsf.pages;
+package cl.utem.informatica.alumnos.nigue.jsf.pages.usuario;
 
 import cl.utem.informatica.alumnos.nigue.modelo.Usuario;
 import cl.utem.informatica.alumnos.nigue.servicio.UsuarioService;

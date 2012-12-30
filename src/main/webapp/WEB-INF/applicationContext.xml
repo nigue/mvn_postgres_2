@@ -14,15 +14,22 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
     <import resource="classpath:dataSourceContext.xml" />
     <import resource="classpath:mybatisContext.xml" />
     
+    <!--Usuario-->
     <bean id="seeUserBean"
-          class="cl.utem.informatica.alumnos.nigue.jsf.pages.SeeUserBean"
+          class="cl.utem.informatica.alumnos.nigue.jsf.pages.usuario.SeeUserBean"
           scope="request"/>
     <bean id="addUserBean"
-          class="cl.utem.informatica.alumnos.nigue.jsf.pages.AddUserBean"/>
+          class="cl.utem.informatica.alumnos.nigue.jsf.pages.usuario.AddUserBean"/>
     <bean id="searchUserBean"
-          class="cl.utem.informatica.alumnos.nigue.jsf.pages.SearchUserBean"/>
+          class="cl.utem.informatica.alumnos.nigue.jsf.pages.usuario.SearchUserBean"/>
     <bean id="updateUserBean"
-          class="cl.utem.informatica.alumnos.nigue.jsf.pages.UpdateUserBean"/>
+          class="cl.utem.informatica.alumnos.nigue.jsf.pages.usuario.UpdateUserBean"/>
     <bean id="deleteUserBean"
-          class="cl.utem.informatica.alumnos.nigue.jsf.pages.DeleteUserBean"/>
+          class="cl.utem.informatica.alumnos.nigue.jsf.pages.usuario.DeleteUserBean"/>
+    
+    <!--Acceso-->
+    <bean id="seeAccesoBean"
+          class="cl.utem.informatica.alumnos.nigue.jsf.pages.acceso.SeeAccesoBean"
+          scope="request"/>
+    
 </beans>

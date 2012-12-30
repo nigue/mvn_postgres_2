@@ -18,23 +18,23 @@ http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd">
         <from-view-id>/jsf/welcome.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>search_user</from-outcome>
-            <to-view-id>/jsf/pages/search-user.xhtml</to-view-id>
+            <to-view-id>/jsf/pages/usuario/search-user.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
             <from-outcome>add_user</from-outcome>
-            <to-view-id>/jsf/pages/add-user.xhtml</to-view-id>
+            <to-view-id>/jsf/pages/usuario/add-user.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
             <from-outcome>update_user</from-outcome>
-            <to-view-id>/jsf/pages/update-user.xhtml</to-view-id>
+            <to-view-id>/jsf/pages/usuario/update-user.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
             <from-outcome>delete_user</from-outcome>
-            <to-view-id>/jsf/pages/delete-user.xhtml</to-view-id>
+            <to-view-id>/jsf/pages/usuario/delete-user.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
             <from-outcome>see_user</from-outcome>
-            <to-view-id>/jsf/pages/see-user.xhtml</to-view-id>
+            <to-view-id>/jsf/pages/usuario/see-user.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
 

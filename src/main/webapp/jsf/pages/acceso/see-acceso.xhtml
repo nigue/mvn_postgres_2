@@ -12,17 +12,20 @@
                 Tarea - Trabajo de Título - Miguel Fuenzalida
             </h1>        
         </div>
-        <p:panel header="Datos">
+        <p:panel header="Datos de la tabla de Acceso">
             <h:form>
                 
-                <p:dataTable var="usuarios" value="${seeUserBean.usuarios}">
-                    <p:column headerText="Rut"
-                              sortBy="${usuarios.rut}">
-                        <h:outputText value="${usuarios.rut}" 
+                <p:dataTable var="acceso" value="${seeAccesoBean.accesos}">
+                    <p:column headerText="Usuario"
+                              sortBy="${acceso.usuario}">
+                        <h:outputText value="${acceso.usuario}" 
                                       converter="rut"/>
                     </p:column>
-                    <p:column headerText="Password">
-                        <h:outputText value="${usuarios.password}" />
+                    <p:column headerText="Ip">
+                        <h:outputText value="${acceso.ip}" />
+                    </p:column>
+                    <p:column headerText="Fecha">
+                        <h:outputText value="${acceso.fecha}" />
                     </p:column>
                 </p:dataTable>
             </h:form>

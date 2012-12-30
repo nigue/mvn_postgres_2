@@ -27,3 +27,4 @@ Tarea: (Próximo Jueves)
 - implementar spring-security para el login.
 - estudiar PLR o R con java.
 - [COMPLETO] el modelo va a cambiar a plural y debe ajustarse en el código.
+- limpiar inputs y corregir ortografía de unos mensajes.

@@ -1,10 +1,7 @@
-package cl.utem.informatica.alumnos.nigue.jsf.pages;
+package cl.utem.informatica.alumnos.nigue.jsf.pages.usuario;
 
 import cl.utem.informatica.alumnos.nigue.modelo.Usuario;
 import cl.utem.informatica.alumnos.nigue.servicio.UsuarioService;
-import java.io.UnsupportedEncodingException;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import javax.annotation.Resource;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
