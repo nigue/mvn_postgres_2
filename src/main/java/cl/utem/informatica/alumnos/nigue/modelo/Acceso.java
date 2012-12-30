@@ -1,12 +1,12 @@
 package cl.utem.informatica.alumnos.nigue.modelo;
 
-import java.sql.Timestamp;
+import java.util.Date;
 
-public class Acceso {
+public class Acceso extends BaseBean {
     
     private int usuario;
     private String ip;
-    private Timestamp fecha;
+    private Date fecha;
 
     public int getUsuario() {
         return usuario;
@@ -24,11 +24,11 @@ public class Acceso {
         this.ip = ip;
     }
 
-    public Timestamp getFecha() {
+    public Date getFecha() {
         return fecha;
     }
 
-    public void setFecha(Timestamp fecha) {
+    public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
     
