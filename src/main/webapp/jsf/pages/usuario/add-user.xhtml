@@ -15,7 +15,7 @@
         <p:panel header="Formulario para ingresar un Usuario">
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="Rut: * "
+                    <h:outputLabel value="Rut: *"
                                    for="rut"/>
                     <p:inputText value="${addUserBean.rut}"
                                  converter="rut"
@@ -23,6 +23,11 @@
                                  requiredMessage="El rut especificado no es correcto"
                                  id="rut"/>
                     
+                    <h:outputLabel value="Nombre: *"
+                                   for="nombre"/>
+                    <p:inputText value="${addUserBean.nombre}"
+                                 required="true"
+                                 id="nombre"/>
                     <h:outputLabel for="pwd1" 
                                    value="Password: *" />  
                     <p:password id="pwd1" 

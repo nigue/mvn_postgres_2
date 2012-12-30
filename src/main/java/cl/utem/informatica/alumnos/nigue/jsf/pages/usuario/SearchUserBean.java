@@ -12,7 +12,7 @@ public class SearchUserBean {
     private static final Logger LOGGER = Logger.getLogger(SearchUserBean.class);
     @Resource(name = "usuarioService")
     private transient UsuarioService usuarioService;
-    private int rut = 14646898;
+    private int rut;
     private Usuario usuarioSearch;
     private boolean dialog;
     
@@ -29,18 +29,18 @@ public class SearchUserBean {
                     null,
                     new FacesMessage(
                     FacesMessage.SEVERITY_INFO,
-                    "ususario encontrado",
+                    "usuario encontrado",
                     "INFO"));
             
             return null;
         } catch (NullPointerException npe) {
             setDialog(false);
-            LOGGER.debug("ususario no encontrado: " + npe);
+            LOGGER.debug("usuario no encontrado: " + npe);
             FacesContext.getCurrentInstance().addMessage(
                     null,
                     new FacesMessage(
                     FacesMessage.SEVERITY_WARN,
-                    "ususario no encontrado",
+                    "usuario no encontrado",
                     "WARNING"));
             LOGGER.debug("npe " + isDialog());
             return null;

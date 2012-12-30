@@ -31,28 +31,15 @@
                                 autoUpdate="true"
                                 closable="true"/>
                 </h:panelGrid>
-                <!--                Mostrar dialog: ${searchUserBean.dialog}
-                                <p:dialog id="modalDialog" 
-                                          header="Usuario" 
-                                          widgetVar="user" 
-                                          modal="true"
-                                          dynamic="true"
-                                          draggable="false"
-                                          resizable="false">
-                                    <h:panelGrid columns="2">
-                                        <h:outputText value="Rut: " />
-                                        <h:outputText value="${searchUserBean.usuarioSearch.rut}" />
-                                        <h:outputText value="Pasword: " />
-                                        <h:outputText value="${searchUserBean.usuarioSearch.password}" />
-                                    </h:panelGrid>
-                                </p:dialog>-->
-
             </p:panel>
             <p:panel header="Resultado de la Busqueda"
                      id ="result">
                 <h:panelGrid columns="2">
                     <h:outputLabel value="Rut: "/>
-                    <h:outputLabel value="${searchUserBean.usuarioSearch.rut}"/>
+                    <h:outputLabel value="${searchUserBean.usuarioSearch.rut}"
+                                   converter="rut"/>
+                    <h:outputLabel value="nombre: "/>
+                    <h:outputLabel value="${searchUserBean.usuarioSearch.nombre}"/>
                     <h:outputLabel value="Password: "/>
                     <h:outputLabel value="${searchUserBean.usuarioSearch.password}"/>
                 </h:panelGrid>

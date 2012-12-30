@@ -13,17 +13,18 @@ public class AddUserBean {
     private static final Logger LOGGER = Logger.getLogger(AddUserBean.class);
     @Resource(name = "usuarioService")
     private transient UsuarioService usuarioService;
-    private int rut = 16978752;
-    private String password = "asdf";
+    private int rut;
+    private String nombre;
+    private String password;
 
     public String doSubmit() {
         LOGGER.debug("######## DO SUBMIT ########");
         LOGGER.debug(getRut() + " and " + getPassword());
-//        String passSha1 = DigestUtils.sha1(getPassword()).toString();
         String passSha1 = DigestUtils.sha1Hex(getPassword());
         Usuario usuario = new Usuario();
 
         usuario.setRut(getRut());
+        usuario.setNombre(getNombre());
         usuario.setPassword(passSha1);
 
         try {
@@ -62,6 +63,14 @@ public class AddUserBean {
 
     public void setRut(int rut) {
         this.rut = rut;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getPassword() {

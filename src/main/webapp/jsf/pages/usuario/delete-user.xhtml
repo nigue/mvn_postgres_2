@@ -39,7 +39,11 @@
                          id ="result">
                     <h:panelGrid columns="2">
                         <h:outputLabel value="Rut: "/>
-                        <h:outputLabel value="${deleteUserBean.usuarioToDelete.rut}"/>
+                        <h:outputLabel value="${deleteUserBean.usuarioToDelete.rut}"
+                                       converter="rut"/>
+                        
+                        <h:outputLabel value="Nombre: "/>
+                        <h:outputLabel value="${deleteUserBean.usuarioToDelete.nombre}"/>
                         
                         <h:outputLabel value="Password: "/>
                         <h:outputLabel value="${deleteUserBean.usuarioToDelete.password}"/>

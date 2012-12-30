@@ -13,7 +13,7 @@ public class UpdateUserBean {
     private static final Logger LOGGER = Logger.getLogger(UpdateUserBean.class);
     @Resource(name = "usuarioService")
     private transient UsuarioService usuarioService;
-    private int rutBusqueda = 14646898;
+    private int rutBusqueda;
     private Usuario usuarioToUpdate;
     private boolean buttonUpdate = true;
 
@@ -25,7 +25,7 @@ public class UpdateUserBean {
                     null,
                     new FacesMessage(
                     FacesMessage.SEVERITY_INFO,
-                    "ususario encontrado",
+                    "usuario encontrado",
                     "INFO"));
             setButtonUpdate(false);
         } catch (NullPointerException npe) {

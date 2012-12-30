@@ -10,10 +10,10 @@ import org.apache.ibatis.annotations.Update;
 
 public interface UsuarioMapper {
     
-    @Select("SELECT rut, password FROM usuarios WHERE rut = #{rut};")
+    @Select("SELECT rut, nombre, password FROM usuarios WHERE rut = #{rut};")
     Usuario getUsuarioByRut(@Param("rut") int rut);
     
-    @Insert("INSERT INTO usuarios (rut, password) VALUES (#{usuario.rut}, #{usuario.password});")
+    @Insert("INSERT INTO usuarios (rut, nombre, password) VALUES (#{usuario.rut}, #{usuario.nombre}, #{usuario.password});")
     void insertUsuario(@Param("usuario") Usuario usuario);
     
     @Update("UPDATE usuarios SET password = #{usuario.password} WHERE rut = #{usuario.rut};")
@@ -22,7 +22,7 @@ public interface UsuarioMapper {
     @Delete("DELETE FROM usuarios WHERE rut = #{usuario.rut};")
     void deleteUsuario(@Param("usuario") Usuario usuario);
     
-    @Select("SELECT rut, password FROM usuarios;")
+    @Select("SELECT rut, nombre, password FROM usuarios;")
     List<Usuario> getAllUsuario();
     
 }

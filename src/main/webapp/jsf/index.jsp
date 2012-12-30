@@ -1,1 +1,1 @@
-<jsp:forward page="pages/acceso/see-acceso.jsf"/>
+<jsp:forward page="welcome.jsf"/>

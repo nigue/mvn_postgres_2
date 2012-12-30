@@ -41,6 +41,9 @@ public class RutConverter implements Converter {
     @Override
     public String getAsString(FacesContext context, UIComponent component, Object value) {
         Integer rut = (Integer) value;
+        if (rut.equals(0) ) {
+            return "";
+        }
         String dataRut = rut.toString();
         try {
             String NewDataRut = dataRut.substring(0, dataRut.length() - 6)

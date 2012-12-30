@@ -39,8 +39,12 @@
                          id ="result">
                     <h:panelGrid columns="2">
                         <h:outputLabel value="Rut: "/>
-                        <h:outputLabel value="${updateUserBean.usuarioToUpdate.rut}"/>
+                        <h:outputLabel value="${updateUserBean.usuarioToUpdate.rut}"
+                                       converter="rut"/>
 
+                        <h:outputLabel value="Nombre: "/>
+                        <h:outputLabel value="${updateUserBean.usuarioToUpdate.nombre}"/>
+                        
                         <h:outputLabel for="pwd1" 
                                        value="Password: *" />  
                         <p:password id="pwd1" 

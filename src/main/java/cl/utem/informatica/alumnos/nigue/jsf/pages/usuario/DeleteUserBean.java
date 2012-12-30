@@ -12,7 +12,7 @@ public class DeleteUserBean {
     private static final Logger LOGGER = Logger.getLogger(DeleteUserBean.class);
     @Resource(name = "usuarioService")
     private transient UsuarioService usuarioService;
-    private int rutBusqueda = 14646898;
+    private int rutBusqueda;
     private Usuario usuarioToDelete;
     private boolean buttonDelete = true;
 
@@ -24,7 +24,7 @@ public class DeleteUserBean {
                     null,
                     new FacesMessage(
                     FacesMessage.SEVERITY_INFO,
-                    "ususario encontrado",
+                    "usuario encontrado",
                     "INFO"));
             setButtonDelete(false);
         } catch (NullPointerException npe) {
