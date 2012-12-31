@@ -1,6 +1,6 @@
 package cl.utem.informatica.alumnos.nigue.modelo;
 
-public class Usuario {
+public class Usuario extends BaseBean {
     
     private int rut;
     private String nombre;
