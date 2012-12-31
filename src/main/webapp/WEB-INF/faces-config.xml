@@ -15,7 +15,7 @@ http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd">
     </application>
 
     <navigation-rule>
-        <from-view-id>/jsf/welcome.xhtml</from-view-id>
+        <from-view-id>/jsf/pages/login/welcome.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>search_user</from-outcome>
             <to-view-id>/jsf/pages/usuario/search-user.xhtml</to-view-id>

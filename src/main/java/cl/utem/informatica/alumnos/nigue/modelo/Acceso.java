@@ -1,26 +1,19 @@
 package cl.utem.informatica.alumnos.nigue.modelo;
 
+import java.net.InetAddress;
 import java.sql.Timestamp;
 
 public class Acceso {
     
-    private int usuario;
-    private String ip;
+    private InetAddress ip;
     private Timestamp fecha;
+    private String nombre;
 
-    public int getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(int usuario) {
-        this.usuario = usuario;
-    }
-
-    public String getIp() {
+    public InetAddress getIp() {
         return ip;
     }
 
-    public void setIp(String ip) {
+    public void setIp(InetAddress ip) {
         this.ip = ip;
     }
 
@@ -31,5 +24,13 @@ public class Acceso {
     public void setFecha(Timestamp fecha) {
         this.fecha = fecha;
     }
-    
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
 }

@@ -1,7 +1,6 @@
 package cl.utem.informatica.alumnos.nigue.jsf.pages.acceso;
 
 import cl.utem.informatica.alumnos.nigue.modelo.Acceso;
-import cl.utem.informatica.alumnos.nigue.modelo.Usuario;
 import cl.utem.informatica.alumnos.nigue.servicio.AccesoService;
 import java.util.ArrayList;
 import java.util.List;

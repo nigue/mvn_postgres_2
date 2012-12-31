@@ -9,12 +9,16 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service("usuarioService")
 public class UsuarioService {
-    
+
     @Autowired
     private UsuarioMapper usuarioMapper;
 
     public Usuario getUsuario(int rut) {
         return usuarioMapper.getUsuarioByRut(rut);
+    }
+
+    public Usuario getUsuarioByRutAndPassword(int rut, String password) {
+        return usuarioMapper.getUsuarioByRutAndPassword(rut, password);
     }
 
     @Transactional

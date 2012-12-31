@@ -16,10 +16,9 @@
             <h:form>
                 
                 <p:dataTable var="acceso" value="${seeAccesoBean.accesos}">
-                    <p:column headerText="Usuario"
-                              sortBy="${acceso.usuario}">
-                        <h:outputText value="${acceso.usuario}" 
-                                      converter="rut"/>
+                    <p:column headerText="Nombre"
+                              sortBy="${acceso.nombre}">
+                        <h:outputText value="${acceso.nombre}" />
                     </p:column>
                     <p:column headerText="Ip">
                         <h:outputText value="${acceso.ip}" />

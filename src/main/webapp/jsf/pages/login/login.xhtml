@@ -17,7 +17,7 @@
                 <h:panelGrid columns="2">
                     <h:outputLabel value="Rut: * "
                                    for="rut"/>
-                    <p:inputText value=""
+                    <p:inputText value="${loginBean.rut}"
                                  converter="rut"
                                  required="true"
                                  requiredMessage="El rut especificado no es correcto"
@@ -26,11 +26,11 @@
                     <h:outputLabel for="pwd" 
                                    value="Password: *" />  
                     <p:password id="pwd" 
-                                value="" 
+                                value="${loginBean.password}" 
                                 label="Password" 
                                 required="true"/>  
                     
-                    <p:commandButton action=""
+                    <p:commandButton action="${loginBean.doSubmit}"
                                      value="Submit"/>
                     <p:messages showDetail="false"
                                 autoUpdate="true"

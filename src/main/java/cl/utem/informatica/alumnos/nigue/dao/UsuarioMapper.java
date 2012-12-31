@@ -13,6 +13,9 @@ public interface UsuarioMapper {
     @Select("SELECT rut, nombre, password FROM usuarios WHERE rut = #{rut};")
     Usuario getUsuarioByRut(@Param("rut") int rut);
     
+    @Select("SELECT rut, nombre, password FROM usuarios WHERE rut = #{rut} AND password = #{password};")
+    Usuario getUsuarioByRutAndPassword(@Param("rut") int rut,@Param("password") String password);
+    
     @Insert("INSERT INTO usuarios (rut, nombre, password) VALUES (#{usuario.rut}, #{usuario.nombre}, #{usuario.password});")
     void insertUsuario(@Param("usuario") Usuario usuario);
     

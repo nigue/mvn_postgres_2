@@ -32,4 +32,9 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
           class="cl.utem.informatica.alumnos.nigue.jsf.pages.acceso.SeeAccesoBean"
           scope="request"/>
     
+    <!--Login-->
+    <bean id="loginBean"
+          class="cl.utem.informatica.alumnos.nigue.jsf.pages.login.LoginBean"
+          scope="request"/>
+    
 </beans>
