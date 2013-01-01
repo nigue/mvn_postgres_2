@@ -23,8 +23,10 @@ Tarea: (Próximo Jueves)
 - [COMPLETO] corregir el SHA1.  php -r '$n=sha1("asdf"); echo "\n$n\n";'
 - [COMPLETO] crear una tabla de accesos. (usuario, ip, hora)
 - crear estadisticas y graficos de los accesos. (promedio, moda, etc...).
-- crear un login sencillo, guardando el acceso.
+- [COMPLETO] crear un login sencillo, guardando el acceso.
 - implementar spring-security para el login.
 - estudiar PLR o R con java.
 - [COMPLETO] el modelo va a cambiar a plural y debe ajustarse en el código.
 - [COMPLETO] limpiar inputs y corregir ortografía de unos mensajes.
+- arrelgar el problema de la pagina welcome (doble aparición).
+- crear el scope VIEW y verificar su utilización.

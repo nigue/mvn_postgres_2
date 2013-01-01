@@ -14,7 +14,7 @@ DROP TABLE IF EXISTS accesos CASCADE;
 CREATE TABLE accesos ( 
 	pk bigserial NOT NULL,
 	usuario_fk int NOT NULL REFERENCES usuarios(pk) ON UPDATE CASCADE ON DELETE CASCADE,
-	ip inet NOT NULL,
+	ip varchar(40) NOT NULL,
 	fecha timestamptz NOT NULL,
 	PRIMARY KEY (pk)
 );

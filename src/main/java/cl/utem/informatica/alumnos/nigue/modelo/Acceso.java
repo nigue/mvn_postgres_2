@@ -1,22 +1,18 @@
 package cl.utem.informatica.alumnos.nigue.modelo;
 
-
-import java.net.InetAddress;
 import java.sql.Timestamp;
-import java.util.Date;
-
 
 public class Acceso extends BaseBean {
     
-    private InetAddress ip;
+    private String ip;
     private Timestamp fecha;
     private String nombre;
 
-    public InetAddress getIp() {
+    public String getIp() {
         return ip;
     }
 
-    public void setIp(InetAddress ip) {
+    public void setIp(String ip) {
         this.ip = ip;
     }
 

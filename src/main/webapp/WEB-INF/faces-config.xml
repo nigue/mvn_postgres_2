@@ -3,9 +3,9 @@
 <!-- =========== FULL CONFIGURATION FILE ================================== -->
 
 <faces-config version="2.1"
-    xmlns="http://java.sun.com/xml/ns/javaee"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+              xmlns="http://java.sun.com/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
 http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd">
 
     <application>
@@ -13,6 +13,14 @@ http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd">
             org.springframework.web.jsf.DelegatingVariableResolver
         </variable-resolver>
     </application>
+    
+    <navigation-rule>
+        <from-view-id>/jsf/pages/login/login.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>welcome_page</from-outcome>
+            <to-view-id>/jsf/pages/login/welcome.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
 
     <navigation-rule>
         <from-view-id>/jsf/pages/login/welcome.xhtml</from-view-id>
@@ -35,6 +43,11 @@ http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd">
         <navigation-case>
             <from-outcome>see_user</from-outcome>
             <to-view-id>/jsf/pages/usuario/see-user.xhtml</to-view-id>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>see_acceso</from-outcome>
+            <to-view-id>/jsf/pages/acceso/see-acceso.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
 

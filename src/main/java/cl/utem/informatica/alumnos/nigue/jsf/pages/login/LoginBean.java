@@ -4,7 +4,6 @@ import cl.utem.informatica.alumnos.nigue.modelo.Acceso;
 import cl.utem.informatica.alumnos.nigue.modelo.Usuario;
 import cl.utem.informatica.alumnos.nigue.servicio.AccesoService;
 import cl.utem.informatica.alumnos.nigue.servicio.UsuarioService;
-import java.net.Inet4Address;
 import java.net.Inet6Address;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -37,15 +36,15 @@ public class LoginBean {
 
                 InetAddress ip;
                 try {
-                    ip = Inet4Address.getLocalHost();
+                    ip = InetAddress.getLocalHost();
                     String dip = ip.getHostAddress();
-                    InetAddress inet = Inet4Address.getByName(dip.substring(0, 9));
+                    InetAddress inet = Inet6Address.getByName(dip);
                     acceso.setNombre(usuario.getNombre());
                     acceso.setFecha(new Timestamp(date.getTime()));
-                    acceso.setIp(InetAddress.getLocalHost());
+                    acceso.setIp(dip);
                     try {
                         accesoService.insertAcceso(acceso);
-                        return "welcome";
+                        return "welcome_page";
                     } catch (Exception e) {
                         LOGGER.debug(e);
                         FacesContext.getCurrentInstance().addMessage(
@@ -54,7 +53,7 @@ public class LoginBean {
                                 FacesMessage.SEVERITY_ERROR,
                                 "La transación fue un fracaso: " + ", " + passSha1.matches(usuario.getPassword())
                                 + ", " + getRut() + ", " + getPassword()
-                                + ", " + dip.substring(0, 9) + ", " + acceso.getFecha()
+                                + ", " + inet + ", " + acceso.getFecha()
                                 + ", " + acceso.getNombre(),
                                 "ERROR"));
                     }

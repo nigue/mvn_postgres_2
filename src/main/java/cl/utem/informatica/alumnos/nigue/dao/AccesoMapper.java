@@ -8,14 +8,14 @@ import org.apache.ibatis.annotations.Select;
 
 public interface AccesoMapper {
 
-//    @Insert("INSERT INTO accesos (usuario_fk, ip, fecha)"
-//    + "SELECT usuarios.pk, '#{acceso.ip}', '#{acceso.fecha}'"
-//    + "FROM usuarios"
-//    + "WHERE usuarios.nombre = #{acceso.nombre};")
-//    void insertAcceso(@Param("acceso") Acceso acceso);
-    
-    @Insert("INSERT INTO accesos (usuario_fk, ip, fecha) VALUES (1, #{acceso.ip}, #{acceso.fecha});")
+    @Insert("INSERT INTO accesos (usuario_fk, ip, fecha)"
+    + " SELECT usuarios.pk, #{acceso.ip}, #{acceso.fecha}"
+    + " FROM usuarios"
+    + " WHERE usuarios.nombre = #{acceso.nombre};")
     void insertAcceso(@Param("acceso") Acceso acceso);
+    
+//    @Insert("INSERT INTO accesos (usuario_fk, ip, fecha) VALUES (1, #{acceso.ip}, #{acceso.fecha});")
+//    void insertAcceso(@Param("acceso") Acceso acceso);
 
     @Select("SELECT accesos.ip, accesos.fecha, usuarios.nombre"
     + " FROM accesos"
