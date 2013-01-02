@@ -24,9 +24,11 @@ Tarea: (Próximo Jueves)
 - [COMPLETO] crear una tabla de accesos. (usuario, ip, hora)
 - crear estadisticas y graficos de los accesos. (promedio, moda, etc...).
 - [COMPLETO] crear un login sencillo, guardando el acceso.
-- implementar spring-security para el login.
+- implementar spring-security para el login. Sobre base de datos.
 - estudiar PLR o R con java.
 - [COMPLETO] el modelo va a cambiar a plural y debe ajustarse en el código.
 - [COMPLETO] limpiar inputs y corregir ortografía de unos mensajes.
 - arrelgar el problema de la pagina welcome (doble aparición).
 - crear el scope VIEW y verificar su utilización.
+- crear un logout con Spring-Secutity Sobre base de datos.
+- Una ves implemantado Spring-Security, verificar problemas de pagina (doble pagina y postgres cast inet).
