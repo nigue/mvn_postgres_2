@@ -21,7 +21,7 @@ public class LoginBean {
     private transient UsuarioService usuarioService;
     @Resource(name = "accesoService")
     private transient AccesoService accesoService;
-    private int rut = 16978752;
+    private int rut;
     private String password;
 
     public String doSubmit() {

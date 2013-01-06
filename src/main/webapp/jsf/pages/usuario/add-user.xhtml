@@ -5,6 +5,8 @@
       xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>Tarea TT</title>
+        <h:outputScript name="scripts.js" library="js"/>
+        <h:outputScript name="jquery.Rut.min.js" library="js"/>
     </h:head>
     <h:body>
         <div align="center">
@@ -13,7 +15,7 @@
             </h1>        
         </div>
         <p:panel header="Formulario para ingresar un Usuario">
-            <h:form>
+            <h:form id="formUsuario">
                 <h:panelGrid columns="2">
                     <h:outputLabel value="Rut: *"
                                    for="rut"/>

@@ -166,7 +166,7 @@ http://maven.apache.org/maven-v4_0_0.xsd">
             <version>${spring.framework.version}</version>
             <scope>compile</scope>
         </dependency>
-
+        
         <!-- MyBatis -->
         <dependency>
             <groupId>org.mybatis</groupId>
