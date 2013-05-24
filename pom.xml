@@ -32,6 +32,10 @@ http://maven.apache.org/maven-v4_0_0.xsd">
         <junit.version>4.11</junit.version>
         <cglib.version>2.2.2</cglib.version>
         <commons-codec.version>1.7</commons-codec.version>
+        
+        <!--data-->
+        <skipTests>false</skipTests>
+        <deployUrl>http://127.0.0.1:8080/manager</deployUrl>
     </properties>
     
     
@@ -53,7 +57,7 @@ http://maven.apache.org/maven-v4_0_0.xsd">
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.12</version>
                 <configuration>
-                    <skipTests>true</skipTests>
+                    <skipTests>${skipTests}</skipTests>
                 </configuration>
             </plugin>
             <!-- Maven Tomcat Plugin -->
@@ -62,7 +66,7 @@ http://maven.apache.org/maven-v4_0_0.xsd">
                 <artifactId>tomcat-maven-plugin</artifactId>
                 <configuration>
                     <url>${deployUrl}</url>
-                    <server>TomcatServer</server>
+                    <server>tomcat</server>
                     <path>/mvn_postgres_2</path>
                 </configuration>
             </plugin>
@@ -76,7 +80,6 @@ http://maven.apache.org/maven-v4_0_0.xsd">
             </plugin>
         </plugins>
     </build>
-    
     
     <dependencies>
         <!-- JSF -->
